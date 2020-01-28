@@ -1,0 +1,33 @@
+{
+  "name": "freedomcode-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pio-kniaz/freedomcode.git"
+  },
+  "author": "Piotr Kniaź",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pio-kniaz/freedomcode/issues"
+  },
+  "homepage": "https://github.com/pio-kniaz/freedomcode#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.10"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0"
+  }
+}
