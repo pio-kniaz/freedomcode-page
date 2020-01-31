@@ -3,6 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "scripts": {
     "server": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -31,6 +42,8 @@
   "devDependencies": {
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "14.0.0",
-    "eslint-plugin-import": "2.20.0"
+    "eslint-plugin-import": "2.20.0",
+    "husky": "4.2.1",
+    "lint-staged": "^10.0.7"
   }
 }
