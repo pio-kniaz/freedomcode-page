@@ -32,17 +32,15 @@ const registerAccount = async (req, res, next) => {
 
   const { secretKey } = req.body;
   if (!secretKey || secretKey !== keys.secretAccountKey) {
-    return res.status(400).json({
-      error: 'Wrong secretAccountKey',
-    });
+    return next(new HttpError('Wrong secretAccountKey', 400));
   }
   const newAccount = new Account(req.body);
   try {
     newAccount.password = await bcrypt.hash(newAccount.password, 10);
     await newAccount.save();
-    res.json({ message: 'User has been created' });
+    return res.json({ message: 'User has been created' });
   } catch (error) {
-    next(new HttpError(error.message, 400));
+    return next(new HttpError(error.message, 400));
   }
 };
 
