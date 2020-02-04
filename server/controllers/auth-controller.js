@@ -3,6 +3,7 @@ const Account = require('.././models/Account');
 const keys = require('.././config/keys');
 const HttpError = require('./../models/Http-error');
 
+// eslint-disable-next-line consistent-return
 const getRefreshToken = async (req, res, next) => {
   const token = req.cookies.refreshToken;
   if (!token) return res.send({ accessToken: null });
