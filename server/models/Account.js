@@ -27,7 +27,7 @@ accountSchema.statics.findByCredentials = async function (payload) {
   const account = this;
   const accountData = await account.findOne({ userName });
 
-  if (!account) {
+  if (!accountData) {
     throw new Error('User not found');
   }
   const isMatch = await bcrypt.compare(password, accountData.password);

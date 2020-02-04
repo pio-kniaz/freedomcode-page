@@ -26,7 +26,6 @@ const logInToAccount = async (req, res, next) => {
     next(new HttpError(error.message, 400));
   }
 };
-
 const registerAccount = async (req, res, next) => {
   // TODO: Add req.body validation for register with @Joi ;)
 
