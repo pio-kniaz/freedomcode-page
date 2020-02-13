@@ -49,7 +49,7 @@ const account = require('./routes/api/account');
 const auth = require('./routes/api/auth');
 
 app.use('/api/account', account);
-app.use('/api/auth', authh);
+app.use('/api/auth', auth);
 
 // Swagger
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
