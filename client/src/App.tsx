@@ -1,13 +1,10 @@
 import React from 'react';
+import Rotes from 'routes/Routes';
 
-const App: React.FC = () => {
-  const sum = (a:number, b: number):string => `${a + b}`;
-  return (
-    <div className="App">
-      <p>React typescript </p>
-      { sum(10, 11)}
-    </div>
-  );
-};
+const App: React.FC = () => (
+  <div className="App">
+    <Rotes />
+  </div>
+);
 
 export default App;
