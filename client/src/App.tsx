@@ -1,9 +1,9 @@
 import React from 'react';
-import Rotes from 'routes/Routes';
+import Routes from 'routes/Routes';
 
 const App: React.FC = () => (
   <div className="App">
-    <Rotes />
+    <Routes />
   </div>
 );
 
