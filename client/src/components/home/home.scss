@@ -1,0 +1,218 @@
+@import 'style/index.scss';
+
+.home {
+  .home__wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 55vw;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  &__layer {
+    position: absolute;
+    width: 100vw;
+    min-height: 55vw;
+    overflow: hidden;
+  }
+
+  &__content-wrap {
+    position: absolute;
+    width: 100vw;
+    min-height: 55vw;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__content-body {
+    width: 25%;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    color: $white;
+  }
+
+  &__frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 55%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 250px;
+    padding: 25px;
+    max-width: 450px;
+    text-align: center;
+    &--white {
+      border: 5px solid $saffron;
+      color: $saffron;
+      font-size: 35px;
+      border-radius: 5px;
+    }
+    &--black {
+      border: 5px solid $codGray;
+      border-radius: 5px;
+      color: $codGray;
+      font-size: 35px;
+    }
+  }
+
+  &__layer h2 {
+    font-size: 2em;
+  }
+
+  &__bottom {
+    background: $codGray;
+    z-index: 1;
+    height: 100vh;
+  }
+
+  &__content-body {
+    &--bottom {
+      left: 100px;
+      top: 15%;
+      color: $codGray;
+      text-align: left;
+    }
+    &--top {
+      right: 30px;
+      top: 80%;
+      color: $saffron;
+      text-align: left;
+    }
+  }
+
+  &__top {
+    background: $white;
+    color: $codGray;
+    z-index: 2;
+    width: 50vw;
+    height: 100vh;
+    border-right: 5px solid $saffron;
+  }
+  &__skills--bottom {
+    max-width: 100px;
+    left: 120px;
+    position: absolute;
+    top: 110px;
+    text-align: center;
+    color: $codGray;
+    border-bottom: 2px solid $saffron;
+    &:after {
+      content: "";
+      font-weight: bold;
+      font-size: 18px;
+      animation: frontEndTech 7s linear infinite;
+    }
+  }
+  &__skills--top {
+    max-width: 150px;
+    right: 120px;
+    position: absolute;
+    bottom: 110px;
+    text-align: center;
+    color: $saffron;
+    border-bottom: 2px solid $white;
+    &:after {
+      content: "";
+      font-weight: bold;
+      font-size: 18px;
+      animation: backEndTech 4s linear infinite;
+    }
+  }
+
+  &__top {
+    transform: skew(-30deg);
+    margin-left: -950px;
+    width: calc(50vw + 1000px);
+  }
+
+  &__top .home__content-wrap {
+    transform: skew(30deg);
+    margin-left: 950px;
+  }
+}
+  @include media-breakpoint-down(md) {
+      transform: skew(-30deg);
+      margin-left: -850px;
+      width: calc(50vw + 850px) !important;
+    }
+
+@keyframes backEndTech {
+  0% {
+    content: "Node.js";
+    filter: blur(0px);
+  }
+  20% {
+    content: "Express.js";
+    filter: blur(1px);
+  }
+  40% {
+    content: "MongoDB";
+    filter: blur(0px);
+  }
+  60% {
+    content: "PHP";
+    filter: blur(1px);
+  }
+  80% {
+    content: "CodeIgniter";
+    filter: blur(0px);
+  }
+  100% {
+    content: "MySQL";
+    filter: blur(1px);
+  }
+}
+@keyframes frontEndTech {
+  0% {
+    content: "HTML 5";
+    filter: blur(0px);
+  }
+  10% {
+    content: "CSS";
+    filter: blur(1px);
+  }
+  20% {
+    content: "Java Script";
+    filter: blur(0px);
+  }
+  30% {
+    content: "Git";
+    filter: blur(1px);
+  }
+  40% {
+    content: "NPM";
+    filter: blur(0px);
+  }
+  50% {
+    content: "jQuery";
+    filter: blur(1px);
+  }
+  60% {
+    content: "Bootstrap";
+    filter: blur(0px);
+  }
+  70% {
+    content: "_lodash";
+    filter: blur(1px);
+  }
+  80% {
+    content: "SASS";
+    filter: blur(0px);
+  }
+  90% {
+    content: "React";
+    filter: blur(1px);
+  }
+  100% {
+    content: "Redux";
+    filter: blur(0px);
+  }
+}

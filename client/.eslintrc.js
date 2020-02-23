@@ -37,6 +37,8 @@ module.exports = {
     'jest'
   ],
   rules: {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".tsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".tsx"] }],
+    "import/prefer-default-export": 0,
+    "react/prop-types": 0,
   },
 };
