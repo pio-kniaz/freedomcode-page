@@ -1,0 +1,21 @@
+@import 'style/index.scss';
+
+.text-field {
+  &__input {
+    @include floating-label;
+    display: flex;
+    flex-flow: column-reverse;
+    margin-bottom: 1em;
+    margin: auto;
+  }
+  &__input-error {
+    border: 1px solid $punch;
+  }
+  &__error-msg {
+    color: $punch;
+    margin-top: .45rem;
+    font-size: 80%;
+    text-align: left;
+  }
+}
+

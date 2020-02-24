@@ -1,5 +1,4 @@
 @import 'style/colors';
-@import '~@csstools/normalize.css';
 
 html,
 body {
@@ -36,3 +35,22 @@ section .Skewed .Skewed__layer {
   margin-left: -850px;
   width: calc(50vw + 1000px);
 }
+
+  input {
+    display: block;
+    height: 30px;
+    padding: .375rem .75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $trout;
+    background-color: $white;
+    background-clip: padding-box;
+    border: 1px solid $ghost;
+    border-radius: .25rem;
+  }
+  textarea {
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    min-height: 150px;
+    resize: vertical;
+  }
