@@ -1,0 +1,13 @@
+@import 'style/index.scss';
+
+.about {
+  background-color: $white;
+  height: 100%;
+  color: $trout;
+  margin-left: 50px;
+  padding: 2rem;
+  &__title {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+}
