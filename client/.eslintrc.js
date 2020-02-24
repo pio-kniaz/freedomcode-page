@@ -40,5 +40,6 @@ module.exports = {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".tsx"] }],
     "import/prefer-default-export": 0,
     "react/prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
   },
 };
