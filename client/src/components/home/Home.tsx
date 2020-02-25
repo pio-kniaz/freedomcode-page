@@ -11,7 +11,7 @@ const Home: React.FC = () => {
   const aboutWrapper = useRef<HTMLDivElement>(null);
   const topLayer = useRef <HTMLDivElement>(null);
 
-  const { delta } = useSkew(aboutWrapper);
+  const { delta } = useSkew(aboutWrapper, 'diagonal');
 
   useEffect(() => {
     if (topLayer.current && delta) {
@@ -22,7 +22,6 @@ const Home: React.FC = () => {
   return (
     <div className="home">
       <div ref={aboutWrapper} className="home__wrapper">
-        {/*  */}
         <div className="home__skewed">
           <div className="home__layer home__bottom">
             <div className="home__content-wrap">
@@ -54,7 +53,6 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-        {/*  */}
       </div>
     </div>
   );

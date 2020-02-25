@@ -3,8 +3,10 @@ import MapGL, { Marker } from 'react-map-gl';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import ContactForm from 'components/contact/contact-form/ContactForm';
+import './contact-map.scss';
 
+import ContactForm from 'components/contact/contact-form/ContactForm';
+// TODO: move to .env
 const mapAccessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
 
 type viewPort = {
@@ -26,15 +28,15 @@ const ContactMap: React.FC = () => {
     markerVisible: true,
   });
   return (
-    <div className="contact__map">
-      <div className="contact__text">
-        <p className="contact__text-title">
+    <div className="contact-map">
+      <div className="contact-map__text">
+        <p className="contact-map__text-title">
           You have an idea, You need someone to bring it to life?
         </p>
-        <p className="contact__text-subtitle">Lets contact with Me!</p>
+        <p className="contact-map__text-subtitle">Lets contact with Me!</p>
         <ContactForm />
       </div>
-      <div className="contact__content">
+      <div className="contact-map__content">
         <MapGL
           mapStyle="mapbox://styles/mapbox/dark-v9"
           {...viewport}

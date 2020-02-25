@@ -1,5 +1,39 @@
 @import 'style/index.scss';
 
+input {
+  display: block;
+  height: 30px;
+  padding: .375rem .75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $trout;
+  background-color: $white;
+  background-clip: padding-box;
+  border: 1px solid $ghost;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  &:focus {
+    background-color: #fff;
+    border-color: $saffron;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba($color: $saffron, $alpha: .25);
+  }
+}
+
+textarea {
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+  min-height: 150px;
+  resize: vertical;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  &:focus {
+    background-color: #fff;
+    border-color: $saffron;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba($color: $saffron, $alpha: .25);
+  }
+}
+
 .text-field {
   &__input {
     @include floating-label;
@@ -18,4 +52,3 @@
     text-align: left;
   }
 }
-
