@@ -9,10 +9,10 @@ interface Props {
 }
 
 const About: React.FC = () => {
-  const aboutWrapper = useRef<HTMLDivElement>(null);
+  const wrapperNode = useRef<HTMLDivElement>(null);
   const topLayer = useRef<HTMLDivElement>(null);
 
-  const { delta } = useSkew(aboutWrapper, 'vertical');
+  const { delta } = useSkew(wrapperNode, 'vertical');
 
   useEffect(() => {
     if (topLayer.current && delta) {
@@ -21,33 +21,24 @@ const About: React.FC = () => {
   }, [delta]);
   return (
     <div className="about">
-      <div ref={aboutWrapper} className="about__wrapper">
-        <div className="about__skewed">
-          <div className="about__layer about__bottom">
-            <div className="about__content-wrap">
-              <div className="about__frame about__frame--white">
-                <p>
-                  Piotr Kniaź
-                </p>
-                <span>
-                  <strong>Back</strong>
-                  {' '}
-                  end Developer
-                </span>
+      <div ref={wrapperNode} className="about__wrapper">
+        <div className="about__layer about__bottom">
+          <div className="about__content-wrap">
+            <div className="about__info about__info--right">
+              <h2>Wow, a whole page just about me!</h2>
+              <div className="about__row">
+                <div className="about__col">
+                  COLS
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div ref={topLayer} className="about__layer about__top">
-            <div className="about__content-wrap">
-              <div className="about__frame about__frame--black">
-                <p>Piotr Kniaź</p>
-                <span>
-                  <strong>Front</strong>
-                  {' '}
-                  end Developer
-                </span>
-              </div>
+        <div ref={topLayer} className="about__layer about__top">
+          <div className="about__content-wrap">
+            <div className="about__info about__info--left">
+              <h2>Wow, a whole page just about me!</h2>
             </div>
           </div>
         </div>

@@ -1,17 +1,3 @@
-// @import 'style/index.scss';
-
-// .about {
-//   background-color: $white;
-//   height: 100%;
-//   color: $trout;
-//   margin-left: 50px;
-//   padding: 2rem;
-//   &__title {
-//     font-size: 3.5rem;
-//     text-align: center;
-//   }
-// }
-
 @import 'style/index.scss';
 
 .about {
@@ -40,45 +26,23 @@
     right: 0;
   }
 
-  &__content-body {
-    width: 25%;
-    position: absolute;
-    top: 50%;
-    text-align: center;
-    transform: translateY(-50%);
-    color: $white;
-  }
-
-  &__frame {
+  &__info {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    width: 55%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 250px;
-    padding: 25px;
-    max-width: 450px;
-    text-align: center;
-    &--white {
-      border: 5px solid $saffron;
-      color: $saffron;
-      font-size: 35px;
-      border-radius: 5px;
+    &--left {
+      h2 {
+        color: $trout;
+        font-size: 3rem;
+      }
     }
-    &--black {
-      border: 5px solid $codGray;
-      border-radius: 5px;
-      color: $codGray;
-      font-size: 35px;
+    &--right {
+      h2 {
+        color: $saffron;
+        font-size: 3rem;
+      }
     }
-  }
-
-  &__layer h2 {
-    font-size: 2em;
   }
 
   &__bottom {
@@ -87,65 +51,17 @@
     height: 100vh;
   }
 
-  &__content-body {
-    &--bottom {
-      left: 100px;
-      top: 15%;
-      color: $codGray;
-      text-align: left;
-    }
-    &--top {
-      right: 30px;
-      top: 80%;
-      color: $saffron;
-      text-align: left;
-    }
-  }
-
   &__top {
     background: $white;
     color: $codGray;
     z-index: 2;
     width: 50vw;
     height: 100vh;
-    border-right: 5px solid $saffron;
-  }
-  &__skills--bottom {
-    max-width: 100px;
-    left: 120px;
-    position: absolute;
-    top: 110px;
-    text-align: center;
-    color: $codGray;
-    border-bottom: 2px solid $saffron;
-    &:after {
-      content: "";
-      font-weight: bold;
-      font-size: 18px;
-      animation: frontEndTech 7s linear infinite;
-    }
-  }
-  &__skills--top {
-    max-width: 150px;
-    right: 120px;
-    position: absolute;
-    bottom: 110px;
-    text-align: center;
-    color: $saffron;
-    border-bottom: 2px solid $white;
-    &:after {
-      content: "";
-      font-weight: bold;
-      font-size: 18px;
-      animation: backEndTech 4s linear infinite;
-    }
   }
 
-  &__top {
-    will-change: transform;
-  }
-
-  &__top .about__content-wrap {
-    transform: skew(0deg);
+  &__row {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
