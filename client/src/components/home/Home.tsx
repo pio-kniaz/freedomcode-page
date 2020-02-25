@@ -1,48 +1,23 @@
 import React, {
-  useState, useEffect, useRef, useCallback,
+  useEffect, useRef,
 } from 'react';
 import './home.scss';
 
 import { useWindowWidth } from 'hooks/useWindowWidth';
-
-import throttle from 'lodash.throttle';
+import { useSkew } from 'hooks/useSkew';
 
 const Home: React.FC = () => {
   const { width } = useWindowWidth();
-  const [delta, setDelta] = useState<number>(0);
   const aboutWrapper = useRef<HTMLDivElement>(null);
   const topLayer = useRef <HTMLDivElement>(null);
+
+  const { delta } = useSkew(aboutWrapper);
 
   useEffect(() => {
     if (topLayer.current && delta) {
       topLayer.current.style.width = `${delta}px`;
     }
   }, [delta]);
-
-  const throttledSetSkew = throttle((e: { clientX: number; }):void => {
-    const deltaMath: number = ((e.clientX - width / 2) * 0.5);
-    const finalSkew: number = deltaMath + e.clientX + 992;
-    setDelta(Math.round(finalSkew));
-  }, 12);
-
-  const throttledSetSkewCallback = useCallback(throttledSetSkew, []);
-
-  useEffect(() => {
-    const handler = aboutWrapper.current;
-    if (handler) {
-      handler.addEventListener('mousemove', (e) => {
-        if (window.innerWidth > 992) {
-          throttledSetSkewCallback(e);
-        }
-      });
-    }
-    // eslint-disable-next-line consistent-return
-    return () => {
-      if (handler) {
-        return handler.removeEventListener('mousemove', (e) => throttledSetSkewCallback(e));
-      }
-    };
-  }, [throttledSetSkewCallback]);
 
   return (
     <div className="home">

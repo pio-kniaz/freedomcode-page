@@ -8,9 +8,10 @@ interface IuseWindowWidthResult {
 }
 export const useWindowWidth = (): IuseWindowWidthResult| any => {
   const [width, setWidth] = useState<number>(getWidth());
+  const updateWidth = () => setWidth(getWidth());
   useEffect(() => {
-    window.addEventListener('resize', () => setWidth(getWidth()));
-    return window.removeEventListener('resize', () => setWidth(getWidth()));
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
   }, []);
   return { width };
 };

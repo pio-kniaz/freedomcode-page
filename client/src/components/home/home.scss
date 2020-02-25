@@ -148,72 +148,55 @@
 @keyframes backEndTech {
   0% {
     content: "Node.js";
-    filter: blur(0px);
   }
   20% {
     content: "Express.js";
-    filter: blur(1px);
   }
   40% {
     content: "MongoDB";
-    filter: blur(0px);
   }
   60% {
     content: "PHP";
-    filter: blur(1px);
   }
   80% {
     content: "CodeIgniter";
-    filter: blur(0px);
   }
   100% {
     content: "MySQL";
-    filter: blur(1px);
   }
 }
 @keyframes frontEndTech {
   0% {
     content: "HTML 5";
-    filter: blur(0px);
   }
   10% {
     content: "CSS";
-    filter: blur(1px);
   }
   20% {
     content: "Java Script";
-    filter: blur(0px);
   }
   30% {
     content: "Git";
-    filter: blur(1px);
   }
   40% {
     content: "NPM";
-    filter: blur(0px);
   }
   50% {
     content: "jQuery";
-    filter: blur(1px);
   }
   60% {
     content: "Bootstrap";
-    filter: blur(0px);
   }
   70% {
     content: "_lodash";
-    filter: blur(1px);
   }
   80% {
     content: "SASS";
-    filter: blur(0px);
   }
   90% {
     content: "React";
-    filter: blur(1px);
   }
   100% {
     content: "Redux";
-    filter: blur(0px);
   }
 }
