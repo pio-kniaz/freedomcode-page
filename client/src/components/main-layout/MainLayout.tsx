@@ -10,11 +10,12 @@ type Props = {
 const MainLayout: React.FC<Props> = (props) => {
   const { children } = props;
   return (
-    <main className="main-layout">
+    <>
       <Navigation />
-
-      {children}
-    </main>
+      <main className="main-layout">
+        {children}
+      </main>
+    </>
   );
 };
 

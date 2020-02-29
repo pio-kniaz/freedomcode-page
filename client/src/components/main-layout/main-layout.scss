@@ -1,4 +1,9 @@
+@import 'style/index.scss';
+
 .main-layout {
   height: 100%;
   overflow-y: auto;
+  @include media-breakpoint-down(sm) {
+      padding-top: 50px;
+  }
 }

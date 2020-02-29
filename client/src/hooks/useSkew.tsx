@@ -16,7 +16,7 @@ export const useSkew = (node: node, skewType: skewType): IUseSkewResult => {
       const deltaMath: number = ((e.clientX - window.innerWidth / 2) * 0.5);
       finalSkew = deltaMath + e.clientX + 992;
     } else {
-      finalSkew = e.clientX;
+      finalSkew = e.clientX + 10;
     }
     setDelta(Math.round(finalSkew));
   }, 12);

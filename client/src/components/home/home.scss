@@ -4,7 +4,7 @@
   .home__wrapper {
     position: relative;
     width: 100%;
-    min-height: 55vw;
+    min-height: 55vh;
     overflow: hidden;
     height: 100vh;
   }
@@ -12,14 +12,14 @@
   &__layer {
     position: absolute;
     width: 100vw;
-    min-height: 55vw;
+    min-height: 55vh;
     overflow: hidden;
   }
 
   &__content-wrap {
     position: absolute;
     width: 100vw;
-    min-height: 55vw;
+    min-height: 55vh;
     bottom: 0;
     top: 0;
     left: 0;
