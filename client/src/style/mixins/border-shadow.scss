@@ -1,0 +1,3 @@
+@mixin border-shadow($color) {
+  box-shadow: 0 4px 6px -6px $color;
+}

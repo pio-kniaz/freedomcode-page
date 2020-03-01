@@ -2,25 +2,19 @@
   0% {
     content: "Node.js";
   }
-  20% {
+  50% {
     content: "Express.js";
   }
-  40% {
+  75% {
     content: "MongoDB";
   }
-  60% {
-    content: "PHP";
-  }
-  80% {
-    content: "CodeIgniter";
-  }
   100% {
-    content: "MySQL";
+    content: "Socket IO";
   }
 }
 @keyframes frontEndTech {
   0% {
-    content: "HTML 5";
+    content: "HTML";
   }
   10% {
     content: "CSS";
@@ -29,27 +23,27 @@
     content: "Java Script";
   }
   30% {
-    content: "Git";
-  }
-  40% {
-    content: "NPM";
-  }
-  50% {
-    content: "jQuery";
-  }
-  60% {
-    content: "Bootstrap";
-  }
-  70% {
-    content: "_lodash";
-  }
-  80% {
-    content: "SASS";
-  }
-  90% {
     content: "React";
   }
-  100% {
+  40% {
     content: "Redux";
+  }
+  50% {
+    content: "Vue";
+  }
+  60% {
+    content: "Vuex";
+  }
+  70% {
+    content: "TypeScript";
+  }
+  70% {
+    content: "Jest";
+  }
+  90% {
+    content: "Socket IO";
+  }
+  100% {
+    content: "Git";
   }
 }

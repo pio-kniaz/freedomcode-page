@@ -9,9 +9,14 @@
     left: 0;
     right: 0;
     font-weight: bold;
+    padding: 10px;
+    @include media-breakpoint-down(sm){
+      padding: 1rem 1rem 2rem 1rem;
+    }
     &-title {
-      font-size: 2rem;
-      color: $saffron;
+      font-size: 2.25rem;
+      color: $white;
+      @include text-shadow-white;
       width: 80%;
       margin: 1.55rem auto;
       @include media-breakpoint-down(md){
@@ -22,8 +27,9 @@
       }
     }
     &-subtitle {
-      font-size: 1.45rem;
-      color: $saffron;
+      font-size: 1.65rem;
+      color: $white;
+      @include text-shadow-white;
       @include media-breakpoint-down(md){
         font-size: 1.30rem;
       }
