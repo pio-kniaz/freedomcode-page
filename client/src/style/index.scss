@@ -1,4 +1,6 @@
-@import 'style/colors';
-@import 'style/variables';
-@import 'style/breakpoints';
-@import 'style/floating-label';
+@import 'style/variables/index';
+@import 'style/custom/index';
+@import 'style/mixins/floating-label';
+@import 'style/kayframes/with-blur';
+@import 'style/kayframes/technologies';
+@import 'style/kayframes/width-page';

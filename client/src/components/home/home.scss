@@ -45,10 +45,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 250px;
+    height: 275px;
     padding: 25px;
     max-width: 450px;
     text-align: center;
+    p {
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+    }
     &--white {
       border: 5px solid $saffron;
       color: $saffron;
@@ -60,6 +64,16 @@
       border-radius: 5px;
       color: $codGray;
       font-size: 35px;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 10px;
+      width: 90%;
+      p {
+        font-size: 1.35rem;
+      }
+      span {
+        font-size: 1.55rem;
+      }
     }
   }
 
@@ -143,60 +157,4 @@
       transform: skew(-30deg);
       margin-left: -850px;
       width: calc(50vw + 850px) !important;
-    }
-
-@keyframes backEndTech {
-  0% {
-    content: "Node.js";
   }
-  20% {
-    content: "Express.js";
-  }
-  40% {
-    content: "MongoDB";
-  }
-  60% {
-    content: "PHP";
-  }
-  80% {
-    content: "CodeIgniter";
-  }
-  100% {
-    content: "MySQL";
-  }
-}
-@keyframes frontEndTech {
-  0% {
-    content: "HTML 5";
-  }
-  10% {
-    content: "CSS";
-  }
-  20% {
-    content: "Java Script";
-  }
-  30% {
-    content: "Git";
-  }
-  40% {
-    content: "NPM";
-  }
-  50% {
-    content: "jQuery";
-  }
-  60% {
-    content: "Bootstrap";
-  }
-  70% {
-    content: "_lodash";
-  }
-  80% {
-    content: "SASS";
-  }
-  90% {
-    content: "React";
-  }
-  100% {
-    content: "Redux";
-  }
-}

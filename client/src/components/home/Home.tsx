@@ -5,6 +5,7 @@ import './home.scss';
 
 import { useWindowWidth } from 'hooks/useWindowWidth';
 import { useSkew } from 'hooks/useSkew';
+import withBlur from 'hoc/with-blur/withBlur';
 
 const Home: React.FC = () => {
   const { width } = useWindowWidth();
@@ -58,4 +59,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default withBlur(Home);
