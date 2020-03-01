@@ -2,13 +2,12 @@ import React from 'react';
 import './contact.scss';
 
 import ContactMap from 'components/contact/contact-map/ContactMap';
+import withBlur from 'hoc/with-blur/withBlur';
 
 const Contact: React.FC = () => (
   <div className="contact">
-    <div className="contact__wrapper">
-      <ContactMap />
-    </div>
+    <ContactMap />
   </div>
 );
 
-export default Contact;
+export default withBlur(Contact);

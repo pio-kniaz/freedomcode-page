@@ -5,8 +5,10 @@ import {
   Formik,
   Form,
 } from 'formik';
+import './contact-form.scss';
 
 import TextField from 'components/shared/text-field/TextField';
+import Button from 'components/shared/button/Button';
 
 interface IFormValues {
   name: string,
@@ -30,7 +32,7 @@ const contactSchema = Yup.object().shape({
 });
 
 const ContactForm: React.FC<{}> = () => (
-  <div className="contact__form">
+  <div className="contact-form">
     <Formik
       initialValues={initialValues}
       validationSchema={contactSchema}
@@ -45,7 +47,7 @@ const ContactForm: React.FC<{}> = () => (
         <TextField name="email" type="email" label="Your Email" placeholder="Enter your email" />
         <TextField name="subject" type="text" label="Subject" placeholder="Enter your subject" />
         <TextField name="message" type="message" label="Message" placeholder="Enter your message" />
-        <button type="submit">Submit</button>
+        <Button type="submit">Submit</Button>
       </Form>
     </Formik>
   </div>

@@ -1,17 +1,18 @@
 import React, {
-  useState, useEffect, useRef, useCallback,
+  useEffect, useRef,
 } from 'react';
 import './home.scss';
 
 import { useWindowWidth } from 'hooks/useWindowWidth';
-
-import throttle from 'lodash.throttle';
+import { useSkew } from 'hooks/useSkew';
+import withBlur from 'hoc/with-blur/withBlur';
 
 const Home: React.FC = () => {
   const { width } = useWindowWidth();
-  const [delta, setDelta] = useState<number>(0);
-  const aboutWrapper = useRef<HTMLDivElement>(null);
+  const wrapperNode = useRef<HTMLDivElement>(null);
   const topLayer = useRef <HTMLDivElement>(null);
+
+  const { delta } = useSkew(wrapperNode, 'diagonal');
 
   useEffect(() => {
     if (topLayer.current && delta) {
@@ -19,35 +20,9 @@ const Home: React.FC = () => {
     }
   }, [delta]);
 
-  const throttledSetSkew = throttle((e: { clientX: number; }):void => {
-    const deltaMath: number = ((e.clientX - width / 2) * 0.5);
-    const finalSkew: number = deltaMath + e.clientX + 992;
-    setDelta(Math.round(finalSkew));
-  }, 12);
-
-  const throttledSetSkewCallback = useCallback(throttledSetSkew, []);
-
-  useEffect(() => {
-    const handler = aboutWrapper.current;
-    if (handler) {
-      handler.addEventListener('mousemove', (e) => {
-        if (window.innerWidth > 992) {
-          throttledSetSkewCallback(e);
-        }
-      });
-    }
-    // eslint-disable-next-line consistent-return
-    return () => {
-      if (handler) {
-        return handler.removeEventListener('mousemove', (e) => throttledSetSkewCallback(e));
-      }
-    };
-  }, [throttledSetSkewCallback]);
-
   return (
     <div className="home">
-      <div ref={aboutWrapper} className="home__wrapper">
-        {/*  */}
+      <div ref={wrapperNode} className="home__wrapper">
         <div className="home__skewed">
           <div className="home__layer home__bottom">
             <div className="home__content-wrap">
@@ -79,10 +54,9 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-        {/*  */}
       </div>
     </div>
   );
 };
 
-export default Home;
+export default withBlur(Home);
