@@ -8,7 +8,7 @@
   width: 50px;
   border-right: 3px solid $saffron;
   @include media-breakpoint-down(sm) {
-    height: 55px;
+    height: 50px;
     width: 100%;
     border: none;
   }
@@ -17,20 +17,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 0;
     @include media-breakpoint-down(sm) {
       flex-direction: row;
       justify-content: start;
       margin: 0;
       padding: 0;
+      height: 100%;
     }
   }
   &__li {
     margin: 10px 0;
-    padding: 10px;
+    padding: 10px 0;
     @include media-breakpoint-down(sm) {
-      margin: 0;
+      margin: 0 10px;
     }
   }
   &__a {

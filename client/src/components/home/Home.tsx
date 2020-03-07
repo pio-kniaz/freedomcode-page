@@ -1,5 +1,6 @@
 import React, {
   useEffect, useRef,
+  useState,
 } from 'react';
 import './home.scss';
 
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
   const { width } = useWindowWidth();
   const wrapperNode = useRef<HTMLDivElement>(null);
   const topLayer = useRef <HTMLDivElement>(null);
+  const [skippingText, setSkippingText] = useState<string>('Front');
 
   const { delta } = useSkew(wrapperNode, 'diagonal');
 
@@ -19,6 +21,20 @@ const Home: React.FC = () => {
       topLayer.current.style.width = `${delta}px`;
     }
   }, [delta]);
+
+  // eslint-disable-next-line consistent-return
+  useEffect(() => {
+    if (width <= 992) {
+      const skippingTextInterval = setInterval(() => {
+        if (skippingText === 'Front') {
+          setSkippingText('Back');
+        } else {
+          setSkippingText('Front');
+        }
+      }, 1000);
+      return () => clearInterval(skippingTextInterval);
+    }
+  }, [width, skippingText]);
 
   return (
     <div className="home">
@@ -32,7 +48,9 @@ const Home: React.FC = () => {
                   Piotr Kniaź
                 </p>
                 <span>
-                  <strong>Back</strong>
+                  {
+                    width > 992 ? <strong>Back</strong> : <strong>{skippingText}</strong>
+                  }
                   {' '}
                   end Developer
                 </span>
@@ -46,7 +64,9 @@ const Home: React.FC = () => {
               <div className="home__frame home__frame--black">
                 <p>Piotr Kniaź</p>
                 <span>
-                  <strong>Front</strong>
+                  {
+                    width > 992 ? <strong>Front</strong> : <strong>{skippingText}</strong>
+                  }
                   {' '}
                   end Developer
                 </span>

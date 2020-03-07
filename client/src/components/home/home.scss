@@ -41,38 +41,58 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: 55%;
+    width: 90%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 275px;
     padding: 25px;
-    max-width: 450px;
     text-align: center;
     p {
       margin-top: 0;
       margin-bottom: 1.25rem;
     }
     &--white {
-      border: 5px solid $saffron;
-      color: $saffron;
-      font-size: 35px;
+      font-size: 5rem;
+      color: $white;
       border-radius: 5px;
+      @include text-shadow(2px,2px, 9px, rgba($white, .9));
+      @include media-breakpoint-down(md) {
+        @include text-shadow(3px,2px, 6px, rgba($white, .9));
+      }
     }
     &--black {
-      border: 5px solid $codGray;
       border-radius: 5px;
       color: $codGray;
-      font-size: 35px;
+      font-size: 5rem;
+      @include text-shadow(3px,5px, 9px, rgba($darkBlack, .9));
+      @include media-breakpoint-down(md) {
+        @include text-shadow(3px,2px, 6px, rgba($darkBlack, .9));
+      }
     }
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       padding: 10px;
-      width: 90%;
+      width: 100%;
       p {
-        font-size: 1.35rem;
+        font-size: 3.55rem;
       }
       span {
-        font-size: 1.55rem;
+        font-size: 3.55rem;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      p {
+        font-size: 2.25rem;
+      }
+      span {
+        font-size: 2.25rem;
+      }
+    }
+    @include media-breakpoint-down(xs) {
+      p {
+        font-size: 1.95rem;
+      }
+      span {
+        font-size: 1.95rem;
       }
     }
   }
@@ -97,7 +117,7 @@
     &--top {
       right: 30px;
       top: 80%;
-      color: $saffron;
+      color: $codGray;
       text-align: left;
     }
   }
@@ -131,8 +151,8 @@
     position: absolute;
     bottom: 110px;
     text-align: center;
-    color: $saffron;
-    border-bottom: 2px solid $white;
+    color: $white;
+    border-bottom: 2px solid $saffron;
     &:after {
       content: "";
       font-weight: bold;
@@ -146,6 +166,9 @@
     transform: skew(-30deg);
     margin-left: -950px;
     width: calc(50vw + 1000px);
+    @include media-breakpoint-down(md) {
+      width: calc(50vw + 950px) !important;
+    }
   }
 
   &__top .home__content-wrap {
@@ -153,8 +176,3 @@
     margin-left: 950px;
   }
 }
-  @include media-breakpoint-down(md) {
-      transform: skew(-30deg);
-      margin-left: -850px;
-      width: calc(50vw + 850px) !important;
-  }
