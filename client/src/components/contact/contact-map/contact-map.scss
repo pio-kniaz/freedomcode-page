@@ -16,25 +16,26 @@
     &-title {
       font-size: 2.25rem;
       color: $white;
-      @include text-shadow-white;
+      @include text-shadow(3px,2px, 9px, $white);
       width: 80%;
       margin: 1.55rem auto;
       @include media-breakpoint-down(md){
-        font-size: 1.50rem;
+        font-size: 1.85rem;
+        max-width: 500px;
       }
       @include media-breakpoint-down(sm){
-        font-size: 1.25rem;
+        font-size: 1.35rem;
       }
     }
     &-subtitle {
       font-size: 1.65rem;
       color: $white;
-      @include text-shadow-white;
+      @include text-shadow(3px,2px, 9px, $white);
       @include media-breakpoint-down(md){
-        font-size: 1.30rem;
+        font-size: 1.50rem;
       }
       @include media-breakpoint-down(sm){
-        font-size: 1.15rem;
+        font-size: 1.20rem;
       }
     }
   }

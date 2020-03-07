@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import Loader from 'components/shared/loader/Loader';
+import { useWindowWidth } from 'hooks/useWindowWidth';
 
 import './about-top.scss';
 
@@ -15,6 +16,8 @@ type date = {
 
 
 const AboutTop: React.FC = () => {
+  const { width } = useWindowWidth();
+
   const [date, setDates] = useState<date>({
     isReady: false,
     years: null,
@@ -41,19 +44,23 @@ const AboutTop: React.FC = () => {
     });
   };
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
-    const dateInterval = setInterval(() => {
-      prepareDates();
-    }, 1000);
-    return () => clearInterval(dateInterval);
-  }, []);
+    if (width >= 992) {
+      const dateInterval = setInterval(() => {
+        prepareDates();
+      }, 1000);
+      return () => clearInterval(dateInterval);
+    }
+    setDates({ ...date, isReady: true });
+  }, [width]);
   const {
     isReady, years, days, hours, minutes, seconds,
   } = date;
 
   return (
     <div className="about-top row">
-      {isReady ? (
+      {(isReady && Object.values(date).every((e) => !!e)) || width < 992 ? (
         <>
           <div className="about-top__time col-lg-4">
             <div className="about-top__time-content">

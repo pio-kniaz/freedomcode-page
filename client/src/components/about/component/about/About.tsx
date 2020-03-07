@@ -18,6 +18,7 @@ const About: React.FC = () => {
       topLayer.current.style.width = `${delta}px`;
     }
   }, [delta]);
+
   return (
     <div className="about">
       <div ref={wrapperNode} className="about__wrapper">

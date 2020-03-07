@@ -1,0 +1,24 @@
+@import 'style/index.scss';
+
+.social {
+  position: absolute;
+  z-index: 9999;
+  left: 75px;
+  bottom: 15px;
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  @include media-breakpoint-down(md) {
+      display: none;
+  }
+  &__icon {
+    svg {
+      transition: color 0.3s linear;
+      color: rgba($color: $saffron, $alpha: 0.7);
+      &:hover {
+        color: $saffron;
+        transition: color 0.3s linear;
+      }
+    }
+  }
+}

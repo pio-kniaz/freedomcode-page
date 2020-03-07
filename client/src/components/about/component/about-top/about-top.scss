@@ -15,7 +15,6 @@
       width: 100%;
       font-size: 3.25rem;
       color: $codGray;
-      @include text-shadow-black;
     }
     &__image {
       display: flex;
@@ -125,7 +124,7 @@
       font-weight: bold;
       font-size: 1.5rem;
       letter-spacing: 0.3px;
-      @include text-shadow-black;
+      @include text-shadow(2px,3px, 10px, rgba($darkBlack, .9));
     }
 
     &__desc {
@@ -138,6 +137,9 @@
         text-align: left;
         width: 100%;
         border-bottom: 2px solid $trout;
+        @include media-breakpoint-down(md) {
+          font-size: 2rem;
+        }
       }
       p {
         max-width: 700px;
@@ -145,6 +147,12 @@
         &:first-of-type {
           font-size: 1.45rem;
           color: rgba($color: $trout, $alpha: 0.7);
+          @include media-breakpoint-down(md) {
+            font-size: 1.15rem;
+          }
+        }
+        @include media-breakpoint-down(md) {
+          font-size: 1.15rem;
         }
       }
     }

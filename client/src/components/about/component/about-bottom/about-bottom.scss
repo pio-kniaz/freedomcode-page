@@ -15,7 +15,7 @@
       width: 100%;
       font-size: 3.25rem;
       color: $white;
-      @include text-shadow-white;
+      // @include text-shadow-white;
     }
     &__image {
       display: flex;
@@ -48,6 +48,9 @@
         text-align: left;
         width: 100%;
         border-bottom: 2px solid $saffron;
+        @include media-breakpoint-down(md) {
+          font-size: 2rem;
+        }
       }
       p {
         color: $white;
@@ -56,6 +59,12 @@
         &:first-of-type {
           font-size: 1.45rem;
           color: rgba($color: $white, $alpha: 0.7);
+          @include media-breakpoint-down(md) {
+            font-size: 1.15rem;
+          }
+        }
+        @include media-breakpoint-down(md) {
+          font-size: 1.15rem;
         }
       }
     }
