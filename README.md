@@ -2,6 +2,6 @@
 
 # Freedom Code Page
 
-> Project technologies **MERN** Stack
+> Project technologies **React TypeScript Express** Stack
 
 

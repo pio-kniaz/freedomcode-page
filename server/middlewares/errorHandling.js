@@ -1,11 +1,11 @@
-const HttpError = require('../models/Http-error');
+const HttpError = require('../utils/Http-error');
 
 const errorHandling = (error, _req, res, next) => {
   if (res.headerSent) {
     return next(error);
   }
   res.status(error.code || 500);
-  res.json({
+  return res.json({
     message: error.message || 'An unknown error occured!',
   });
 };
