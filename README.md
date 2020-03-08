@@ -2,6 +2,6 @@
 
 # Freedom Code Page
 
-> Project technologies **React TypeScript Express** Stack
+> Project technologies **React TypeScript Express**
 
 
