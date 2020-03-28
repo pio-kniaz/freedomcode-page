@@ -2,7 +2,7 @@
 import React from 'react';
 import './button.scss';
 
-type defaultProps = {
+type DefaultProps = {
   variant?: string,
 }
 
@@ -22,7 +22,7 @@ type Props = {
 }
 
 
-const Button: React.FC<Props & defaultProps> = (props) => {
+const Button: React.FC<Props & DefaultProps> = (props) => {
   const { children, variant, ...rest } = props;
   return (
     <button {...rest} className={`button ${variant}`}>

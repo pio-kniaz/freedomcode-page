@@ -1,14 +1,14 @@
 import { useState, useEffect, useCallback } from 'react';
 import throttle from 'lodash.throttle';
 
-type node = {
+type Node = {
   current: HTMLDivElement | null,
 }
-type skewType = 'vertical' | 'diagonal';
+type SewType = 'vertical' | 'diagonal';
 interface IUseSkewResult {
   delta: number;
 }
-export const useSkew = (node: node, skewType: skewType): IUseSkewResult => {
+export const useSkew = (node: Node, skewType: SewType): IUseSkewResult => {
   const [delta, setDelta] = useState<number>(0);
   const throttledSetSkew = throttle((e: { clientX: number; }): void => {
     let finalSkew: number = 0;
