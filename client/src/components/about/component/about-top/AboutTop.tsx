@@ -5,7 +5,7 @@ import { useWindowWidth } from 'hooks/useWindowWidth';
 
 import './about-top.scss';
 
-type date = {
+type Date = {
   isReady: boolean,
   years: number | null,
   days: number | null,
@@ -18,7 +18,7 @@ type date = {
 const AboutTop: React.FC = () => {
   const { width } = useWindowWidth();
 
-  const [date, setDates] = useState<date>({
+  const [date, setDates] = useState<Date>({
     isReady: false,
     years: null,
     days: null,

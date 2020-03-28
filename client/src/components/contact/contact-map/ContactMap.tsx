@@ -6,10 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './contact-map.scss';
 
 import ContactForm from 'components/contact/contact-form/ContactForm';
-// TODO: move to .env
-const mapAccessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
 
-type viewPort = {
+type ViewPort = {
   width: string,
   height: string,
   latitude: number,
@@ -19,7 +17,7 @@ type viewPort = {
 }
 
 const ContactMap: React.FC = () => {
-  const [viewport] = useState<viewPort>({
+  const [viewport] = useState<ViewPort>({
     width: '100%',
     height: '100%',
     latitude: 52.22967560,
@@ -40,7 +38,7 @@ const ContactMap: React.FC = () => {
         <MapGL
           mapStyle="mapbox://styles/mapbox/dark-v9"
           {...viewport}
-          mapboxApiAccessToken={mapAccessToken}
+          mapboxApiAccessToken={process.env.REACT_APP_MAP_ACCESS_TOKEN}
         >
           {viewport.markerVisible && (
             <Marker

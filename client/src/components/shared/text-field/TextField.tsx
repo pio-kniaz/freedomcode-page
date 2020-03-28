@@ -1,15 +1,12 @@
 import React from 'react';
 import { useField } from 'formik';
+
 import './text-field.scss';
 
-interface Props {
-
-}
-
-const TextField: React.FC<Props | any> = ({ label, ...props }) => {
+const TextField: React.FC<any> = ({ label, ...props }) => {
   const [field, meta] = useField(props);
   const { type, name } = props;
-  const createInputField = (fieldType: any) => {
+  const createInputField = (fieldType: string) => {
     switch (fieldType) {
       case 'message':
         return <textarea className={(meta.touched && meta.error && 'text-field__input-error') || null} {...field} {...props} id={name} />;

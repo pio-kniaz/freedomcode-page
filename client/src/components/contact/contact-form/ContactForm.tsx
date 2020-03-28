@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer, useEffect } from 'react';
 import * as Yup from 'yup';
 
 import {
@@ -12,9 +12,10 @@ import Button from 'components/shared/button/Button';
 import {
   contactFormReducer,
   initialState as contactInitialState,
-} from 'components/contact/contact-form/contactReducer';
+} from 'components/contact/contactReducer';
 
 import { sendEmailRequest } from 'components/contact/actions';
+import { successToast, failureToast } from 'utils/toastify';
 
 interface IFormValues {
   name: string,
@@ -31,10 +32,10 @@ const initialValues: IFormValues = {
 };
 
 const contactSchema = Yup.object().shape({
-  name: Yup.string().max(23).trim().required(),
-  subject: Yup.string().max(23).min(3).required(),
+  name: Yup.string().min(3).max(30).required(),
+  subject: Yup.string().min(3).max(30).required(),
   email: Yup.string().email().required(),
-  message: Yup.string().max(200).min(3).required(),
+  message: Yup.string().min(3).max(200).required(),
 });
 
 const ContactForm: React.FC<{}> = () => {
@@ -42,15 +43,23 @@ const ContactForm: React.FC<{}> = () => {
     emailRequest,
     emailError,
     emailSuccess,
-  }, dispatch] = React.useReducer(contactFormReducer, contactInitialState);
+  }, dispatch] = useReducer(contactFormReducer, contactInitialState);
+  useEffect(() => {
+    console.log({
+      emailRequest,
+      emailError,
+      emailSuccess,
+    });
+    if (emailError) {
+      Object.keys(emailError).forEach((msg) => failureToast(emailError[msg]));
+    } else if (emailSuccess) {
+      successToast(emailSuccess);
+    }
+  }, [emailRequest]);
   const onSubmitForm = (values: IFormValues) => {
     sendEmailRequest(dispatch, values);
   };
-  console.log({
-    emailRequest,
-    emailError,
-    emailSuccess,
-  });
+
   return (
     <div className="contact-form">
       <Formik
@@ -62,14 +71,15 @@ const ContactForm: React.FC<{}> = () => {
         }}
       >
         <Form translate="yes">
-          <TextField name="name" type="text" label="Your Name" placeholder="Enter your name" />
-          <TextField name="email" type="email" label="Your Email" placeholder="Enter your email" />
+          <TextField name="name" type="text" label="Name" placeholder="Enter your name" />
+          <TextField name="email" type="email" label="Email" placeholder="Enter your email" />
           <TextField name="subject" type="text" label="Subject" placeholder="Enter your subject" />
           <TextField name="message" type="message" label="Message" placeholder="Enter your message" />
-          <Button type="submit">
+          {/* TODO: ADD style for dissabled btn */}
+          <Button type="submit" disabled={emailRequest}>
             {emailRequest ? (
               <span>
-                loading ...
+                Sending...
               </span>
             ) : <span> Submit </span>}
           </Button>

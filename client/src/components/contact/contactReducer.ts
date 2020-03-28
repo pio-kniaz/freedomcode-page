@@ -1,12 +1,23 @@
 import { ACTIONTYPES } from 'actionTypes';
 
+type State = {
+  emailRequest: boolean
+  emailError: string | boolean,
+  emailSuccess: string | boolean,
+}
+
+type Action = {
+  type: string,
+  payload?: any,
+}
+
 export const initialState = {
   emailRequest: false,
   emailError: false,
   emailSuccess: false,
 };
 
-export function contactFormReducer(state, action) {
+export function contactFormReducer(state: State, action: Action) {
   switch (action.type) {
     case ACTIONTYPES.CONTACT.SEND_EMAIL_INIT:
       return {
@@ -32,4 +43,4 @@ export function contactFormReducer(state, action) {
     default:
       return state;
   }
-};
+}
