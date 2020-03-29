@@ -69,8 +69,14 @@
       }
     }
     &__content {
-        margin: 0 auto;
-        max-width: 650px;
-        padding-bottom: 3rem;
+      margin: 0 auto;
+      max-width: 650px;
+      padding-bottom: 3rem;
+      p {
+        line-height: 1.45;
+        strong {
+          border-bottom: 2px solid $saffron;
+        }
+      }
     }
 }

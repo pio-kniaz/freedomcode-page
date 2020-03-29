@@ -10,24 +10,16 @@ const AboutBottom: React.FC = () => (
       <div className="about-bottom__content">
         <h2>Personal</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Facilis, veritatis ex.
-          Reprehenderit cumque non ipsum vero quas quo culpa repellendus!
-          Inventore soluta
-          animi culpa ipsam similique ullam laboriosam ad quam!
+          Hey my name is Piotr and
+          {' '}
+          <strong>I do my passion for a living!</strong>
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-          nihil assumenda
-          accusantium obcaecati deleniti adipisci officiis itaque, tenetur
-          placeat architecto
-          unde nisi! Quia enim numquam quam necessitatibus maxime pariatur
-          dolorem Lorem ipsum,
-          dolor sit amet consectetur adipisicing elit. Qui debitis asperiores
-          explicabo
-          atque placeat expedita accusantium quaerat est eum, excepturi nulla
-          tempore totam,
-          repellendus quod dicta fugiat. Suscipit, soluta illum!
+          I am glad that I have clean bill of health, lovely girl and beautiful dog.
+          <br />
+          I like mountain expedition , skiing and traveling.
+          I live my passion and I like develop myself and keep trying, everyday,
+          to be a more experienced and better programmer.
         </p>
       </div>
     </div>

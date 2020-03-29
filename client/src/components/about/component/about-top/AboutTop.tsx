@@ -93,24 +93,20 @@ const AboutTop: React.FC = () => {
             <div className="about-top__content">
               <h2>Professional</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Facilis, veritatis ex.
-                Reprehenderit cumque non ipsum vero quas quo culpa repellendus!
-                Inventore soluta
-                animi culpa ipsam similique ullam laboriosam ad quam!
+                A Front End Developer with passion from Warsaw with Backend skills,
+                {' '}
+                who loves create web appliation from scratch to production
+                version using mordern technologies like
+                {' '}
+                <strong>React</strong>
+                {' '}
+                and
+                {' '}
+                <strong>Vue</strong>
+                .
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-                nihil assumenda
-                accusantium obcaecati deleniti adipisci officiis itaque, tenetur
-                placeat architecto
-                unde nisi! Quia enim numquam quam necessitatibus maxime pariatur
-                dolorem Lorem ipsum,
-                dolor sit amet consectetur adipisicing elit. Qui debitis asperiores
-                explicabo
-                atque placeat expedita accusantium quaerat est eum, excepturi nulla
-                tempore totam,
-                repellendus quod dicta fugiat. Suscipit, soluta illum!
+                Currently I am working for Polish Software House where I use mainly JavaScript.
               </p>
             </div>
           </div>

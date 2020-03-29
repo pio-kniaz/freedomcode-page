@@ -160,6 +160,9 @@
       margin: 0 auto;
       max-width: 650px;
       padding-bottom: 3rem;
+      p {
+        line-height: 1.45;
+      }
     }
     &__lodaing {
       width: 100%;
