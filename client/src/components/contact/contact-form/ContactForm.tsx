@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect, useState } from 'react';
 import * as Yup from 'yup';
 
 import {
@@ -9,6 +9,7 @@ import './contact-form.scss';
 
 import TextField from 'components/shared/text-field/TextField';
 import Button from 'components/shared/button/Button';
+
 import {
   contactFormReducer,
   initialState as contactInitialState,
@@ -35,7 +36,7 @@ const contactSchema = Yup.object().shape({
   name: Yup.string().min(3).max(30).required(),
   subject: Yup.string().min(3).max(30).required(),
   email: Yup.string().email().required(),
-  message: Yup.string().min(3).max(200).required(),
+  message: Yup.string().min(3).max(500).required(),
 });
 
 const ContactForm: React.FC<{}> = () => {
@@ -45,11 +46,6 @@ const ContactForm: React.FC<{}> = () => {
     emailSuccess,
   }, dispatch] = useReducer(contactFormReducer, contactInitialState);
   useEffect(() => {
-    console.log({
-      emailRequest,
-      emailError,
-      emailSuccess,
-    });
     if (emailError) {
       Object.keys(emailError).forEach((msg) => failureToast(emailError[msg]));
     } else if (emailSuccess) {
@@ -75,7 +71,6 @@ const ContactForm: React.FC<{}> = () => {
           <TextField name="email" type="email" label="Email" placeholder="Enter your email" />
           <TextField name="subject" type="text" label="Subject" placeholder="Enter your subject" />
           <TextField name="message" type="message" label="Message" placeholder="Enter your message" />
-          {/* TODO: ADD style for dissabled btn */}
           <Button type="submit" disabled={emailRequest}>
             {emailRequest ? (
               <span>

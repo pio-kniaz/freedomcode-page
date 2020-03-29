@@ -23,8 +23,23 @@
   ::-webkit-input-placeholder
     opacity: 0
     transition: inherit
+  ::-moz-placeholder
+    opacity: 0
+    transition: inherit
+  ::-ms-input-placeholder
+    opacity: 0
+    transition: inherit
+  :-moz-placeholder
+    opacity: 0
+    transition: inherit
 
   input:focus::-webkit-input-placeholder
+    opacity: 1
+  input:focus::-moz-placeholder
+    opacity: 1
+  input:focus::-ms-input-placeholder
+    opacity: 1
+  input:focus:-moz-placeholder
     opacity: 1
 
   input:not(:placeholder-shown) + label,
@@ -45,8 +60,23 @@
   ::-webkit-input-placeholder
     opacity: 0
     transition: inherit
+  ::-moz-placeholder
+    opacity: 0
+    transition: inherit
+  ::-ms-input-placeholder
+    opacity: 0
+    transition: inherit
+  :-moz-placeholder
+    opacity: 0
+    transition: inherit
 
   textarea:focus::-webkit-input-placeholder
+    opacity: 1
+  textarea:focus::-moz-placeholder
+    opacity: 1
+  textarea:focus::-ms-input-placeholder
+    opacity: 1
+  textarea:focus:-moz-placeholder
     opacity: 1
 
   textarea:not(:placeholder-shown) + label,
