@@ -26,4 +26,11 @@
       background-color: $darkBlack;
     }
   }
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    &:hover {
+      background-color: $codGray;
+    }
+  }
 }
