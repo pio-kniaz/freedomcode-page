@@ -33,7 +33,7 @@ const initialValues: IFormValues = {
 };
 
 const contactSchema = Yup.object().shape({
-  name: Yup.string().min(2).max(30).required(),
+  name: Yup.string().min(3).max(30).required(),
   subject: Yup.string().min(3).max(30).required(),
   email: Yup.string().email().required(),
   message: Yup.string().min(3).max(500).required(),
