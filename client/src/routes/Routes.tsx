@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from 'react-router-dom';
 
 import AboutPage from 'pages/about-page/AboutPage';
@@ -15,6 +16,7 @@ const Routes: React.FC = () => (
       <Route path="/" exact component={HomePage} />
       <Route path="/about" component={AboutPage} />
       <Route path="/contact" component={ContactPage} />
+      <Redirect to="/" />
     </Switch>
   </Router>
 );
