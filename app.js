@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -11,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: keys.serverPath,
   credentials: true,
 }));
 
@@ -20,6 +21,13 @@ app.use(cors({
 const contact = require('./routes/api/contact');
 
 app.use('/api/contact', contact);
+
+if (keys.nodeEnv === 'production') {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 // Global error handling
 app.use(errorHandlingNoMatchRoutes);
