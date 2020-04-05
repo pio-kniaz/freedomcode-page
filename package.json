@@ -2,7 +2,7 @@
   "name": "freedomcode-page",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -15,7 +15,7 @@
     ]
   },
   "scripts": {
-    "server": "nodemon server.js",
+    "server": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint"
   },
