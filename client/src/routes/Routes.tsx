@@ -13,9 +13,15 @@ import ContactPage from 'pages/contact-page/ContactPage';
 const Routes: React.FC = () => (
   <Router>
     <Switch>
-      <Route path="/" exact component={HomePage} />
-      <Route path="/about" component={AboutPage} />
-      <Route path="/contact" component={ContactPage} />
+      <Route path="/" exact>
+        <HomePage />
+      </Route>
+      <Route path="/about">
+        <AboutPage/>
+      </Route>
+      <Route path="/contact">
+        <ContactPage />
+      </Route>
       <Redirect to="/" />
     </Switch>
   </Router>
