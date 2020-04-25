@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
-
 import {
   Formik,
   Form,
@@ -39,7 +39,8 @@ const contactSchema = Yup.object().shape({
   message: Yup.string().min(3).max(500).required(),
 });
 
-const ContactForm: React.FC<{}> = () => {
+const ContactForm: React.FC<{}> = (props) => {
+  const history = useHistory();
   const [{
     emailRequest,
     emailError,
@@ -52,7 +53,9 @@ const ContactForm: React.FC<{}> = () => {
       }
       failureToast('Unexpected Error');
     } else if (emailSuccess) {
-      successToast(emailSuccess);
+      Promise.resolve(successToast(emailSuccess)).then(() => setTimeout(() => {
+        history.push("/")
+      }, 1000));
     }
   }, [emailRequest]);
   const onSubmitForm = (values: IFormValues) => {
@@ -67,6 +70,7 @@ const ContactForm: React.FC<{}> = () => {
         onSubmit={(values, actions) => {
           onSubmitForm(values);
           actions.setSubmitting(false);
+          actions.resetForm();
         }}
       >
         <Form translate="yes">
